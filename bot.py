@@ -1,28 +1,14 @@
 import config
 import rasp
 import exams_rasp
-
 import datetime
 import os
-import random
-import sqlite3
 import os.path
 
 import telebot
 from telebot import types
 
 bot = telebot.TeleBot(config.TOKEN)
-
-conn = sqlite3.connect('homework.db', check_same_thread=False)
-cur = conn.cursor()
-
-cur.execute("""CREATE TABLE IF NOT EXISTS hw(
-    id INTEGER,
-    lesson TEXT,
-    task TEXT);
-""")
-conn.commit()
-
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -127,10 +113,6 @@ def day_check(message):
         fri = types.InlineKeyboardButton('Пятница', callback_data='fri')
         sat = types.InlineKeyboardButton('Суббота', callback_data='sat')
         other_day_markup.add(mon, tue, wed, thu, fri, sat)
-
-        sm = ['(ノಠ益ಠ)ノ彡', '╭∩╮(Ο_Ο)╭∩╮', '(ಠ_ಠ)┌∩┐', 'ε(´סּ︵סּ`)з', 'Загрузка... ████████████] 99%']
-
-        sm_id = random.randint(0, 4)
 
         if today_day_number > 5:
             now_week_number = datetime.date(int(today[0]), int(today[1]), int(today[2])).isocalendar()[1] + 1
