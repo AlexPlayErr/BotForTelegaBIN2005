@@ -36,7 +36,7 @@ def action_pick(message):
         day_pick_rasp.add(today, tomorrow, this_week)
 
 
-        day_pick_send = bot.send_message(message.chat.id, 'Привет, выбери, на какой день хочешь узнать расписание',
+        day_pick_send = bot.send_message(message.chat.id, 'Привет,будь добр, выбери, на какой день хочешь узнать расписание',
                                          reply_markup=day_pick_rasp)
 
         bot.register_next_step_handler(day_pick_send, day_check)
