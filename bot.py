@@ -180,17 +180,17 @@ def day_check(message):
 
 
 def literature(message):
-     if message.text == 'Английский язык':
-         bot.send_message(message.chat.id, '<b>Ссылка на англ \n https://disk.yandex.ru/d/7HWTjrdEBRWgAQ?w=1 </b>', reply_markup=literature_pick,parse_mode="HTML")
+    if message.text == 'Английский язык':
+        bot.send_message(message.chat.id, '<b>Ссылка на англ \n https://disk.yandex.ru/d/7HWTjrdEBRWgAQ?w=1 </b>',parse_mode="HTML")
 
-    # elif message.text == 'Математика':
-    #     bot.send_message(message.chat.id, '<b>Выбери нужный предмет</b>', reply_markup=literature_pick,parse_mode="HTML")
+    elif message.text == 'Математика':
+        bot.send_message(message.chat.id, '<b>Ссылка на матан \n https://disk.yandex.ru/d/vpubfPPIQS192Q?w=1 </b>',parse_mode="HTML")
 
-    # elif message.text == 'Физика':
-    #     bot.send_message(message.chat.id, '<b>Выбери нужный предмет</b>', reply_markup=literature_pick,parse_mode="HTML")
+    elif message.text == 'Физика':
+        bot.send_message(message.chat.id, '<b>Ссылка на физику \n https://disk.yandex.ru/d/lId07yEsLP9Pxg?w=1 </b>',parse_mode="HTML")
 
-    # elif message.text == 'ИКГ':
-    #     bot.send_message(message.chat.id, '<b>Выбери нужный предмет</b>', reply_markup=literature_pick,parse_mode="HTML")
+    elif message.text == 'ИКГ':
+        bot.send_message(message.chat.id, '<b>Ссылка на ИКГ \n https://disk.yandex.ru/d/agI3-hnH3tOgSA?w=1 </b>',parse_mode="HTML")
     start(message)
 
 
