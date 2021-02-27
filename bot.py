@@ -180,29 +180,17 @@ def day_check(message):
 
 
 def literature(message):
-    if message.text == 'Английский язык':
-        files = os.listdir(path="./static/literature/english")
-        for i in range(len(files)):
-            book = open('static/literature/english/' + files[i], 'rb')
-            bot.send_document(message.chat.id, book)
+     if message.text == 'Английский язык':
+         bot.send_message(message.chat.id, '<b>Ссылка на англ \n https://disk.yandex.ru/d/7HWTjrdEBRWgAQ?w=1 </b>', reply_markup=literature_pick,parse_mode="HTML")
 
-    elif message.text == 'Математика':
-        files = os.listdir(path="./static/literature/math")
-        for i in range(len(files)):
-            book = open('static/literature/math/' + files[i], 'rb')
-            bot.send_document(message.chat.id, book)
+    # elif message.text == 'Математика':
+    #     bot.send_message(message.chat.id, '<b>Выбери нужный предмет</b>', reply_markup=literature_pick,parse_mode="HTML")
 
-    elif message.text == 'Физика':
-        files = os.listdir(path="./static/literature/physics")
-        for i in range(len(files)):
-            book = open('static/literature/physics/' + files[i], 'rb')
-            bot.send_document(message.chat.id, book)
+    # elif message.text == 'Физика':
+    #     bot.send_message(message.chat.id, '<b>Выбери нужный предмет</b>', reply_markup=literature_pick,parse_mode="HTML")
 
-    elif message.text == 'ИКГ':
-        files = os.listdir(path="./static/literature/ikg")
-        for i in range(len(files)):
-            book = open('static/literature/ikg/' + files[i], 'rb')
-            bot.send_document(message.chat.id, book)
+    # elif message.text == 'ИКГ':
+    #     bot.send_message(message.chat.id, '<b>Выбери нужный предмет</b>', reply_markup=literature_pick,parse_mode="HTML")
     start(message)
 
 
