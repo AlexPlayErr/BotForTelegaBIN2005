@@ -99,7 +99,7 @@ def day_check(message):
 
     elif message.text == 'На неделю':
 
-        now_week_number = datetime.date(int(today[0]), int(today[1]), int(today[2])).isocalendar()[1]
+        now_week_number = datetime.date(int(today[0]), int(today[1]), int(today[2])).isocalendar()[1]+1
 
         today_day_number = datetime.datetime.today().weekday()
 
@@ -168,9 +168,7 @@ def day_check(message):
                         else:
                             bot.send_message(call.message.chat.id, rasp.Nechet[5], parse_mode='HTML')
                         rasp_day = "субботу"
-
-
-                start(message)
+            start(message)
 
             except Exception as e:
                 print(repr(e))
