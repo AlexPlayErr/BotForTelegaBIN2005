@@ -99,7 +99,7 @@ def day_check(message):
 
     elif message.text == 'На неделю':
 
-        now_week_number = datetime.date(int(today[0]), int(today[1]), int(today[2])).isocalendar()[1]+1
+        now_week_number = datetime.date(int(today[0]), int(today[1]), int(today[2])).isocalendar()[1]
 
         today_day_number = datetime.datetime.today().weekday()
 
@@ -128,51 +128,50 @@ def day_check(message):
             try:
                 if call.message:
                     if call.data == 'mon':
-                        if now_week_number % 2 == 0:
+                        if now_week_number % 2 == 1:
                             bot.send_message(call.message.chat.id, rasp.Chet[0], parse_mode='HTML')
                         else:
                             bot.send_message(call.message.chat.id, rasp.Nechet[0], parse_mode='HTML')
                         rasp_day = "понедельник"
 
                     elif call.data == 'tue':
-                        if now_week_number % 2 == 0:
+                        if now_week_number % 2 == 1:
                             bot.send_message(call.message.chat.id, rasp.Chet[1], parse_mode='HTML')
                         else:
                             bot.send_message(call.message.chat.id, rasp.Nechet[1], parse_mode='HTML')
                         rasp_day = "вторник"
 
                     elif call.data == 'wed':
-                        if now_week_number % 2 == 0:
+                        if now_week_number % 2 == 1:
                             bot.send_message(call.message.chat.id, rasp.Chet[2], parse_mode='HTML')
                         else:
                             bot.send_message(call.message.chat.id, rasp.Nechet[2], parse_mode='HTML')
                         rasp_day = "среду"
 
                     elif call.data == 'thu':
-                        if now_week_number % 2 == 0:
+                        if now_week_number % 2 == 1:
                             bot.send_message(call.message.chat.id, rasp.Chet[3], parse_mode='HTML')
                         else:
                             bot.send_message(call.message.chat.id, rasp.Nechet[3], parse_mode='HTML')
                         rasp_day = "четверг"
 
                     elif call.data == 'fri':
-                        if now_week_number % 2 == 0:
+                        if now_week_number % 2 == 1:
                             bot.send_message(call.message.chat.id, rasp.Chet[4], parse_mode='HTML')
                         else:
                             bot.send_message(call.message.chat.id, rasp.Nechet[4], parse_mode='HTML')
                         rasp_day = "пятницу"
 
                     elif call.data == 'sat':
-                        if now_week_number % 2 == 0:
+                        if now_week_number % 2 == 1:
                             bot.send_message(call.message.chat.id, rasp.Chet[5], parse_mode='HTML')
                         else:
                             bot.send_message(call.message.chat.id, rasp.Nechet[5], parse_mode='HTML')
                         rasp_day = "субботу"
-            start(message)
 
             except Exception as e:
                 print(repr(e))
-
+            start(message)
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                   text="<b>Расписание на " + rasp_day + ":</b>", reply_markup=None, parse_mode='HTML')
 
